@@ -7,14 +7,14 @@ import java.util.Objects;
 import java.util.Set;
 
 public class Bootcamp {
-    private String nome;
-    private String descricao;
-    private final LocalDate dataInicial = LocalDate.now();
-    private final LocalDate dataFinal = dataInicial.plusDays(45);
-    private Set<Dev> devsInscritos = new HashSet<>();
-    private Set<Conteudo> conteudos = new LinkedHashSet<>();
+    private String nome; // Nome do bootcamp
+    private String descricao; // Descrição do bootcamp
+    private final LocalDate dataInicial = LocalDate.now(); // Data inicial do bootcamp (data atual)
+    private final LocalDate dataFinal = dataInicial.plusDays(45); // Data final do bootcamp (45 dias após a data inicial)
+    private Set<Dev> devsInscritos = new HashSet<>(); // Conjunto de desenvolvedores inscritos no bootcamp
+    private Set<Conteudo> conteudos = new LinkedHashSet<>(); // Conjunto de conteúdos do bootcamp
 
-
+    // Métodos getters e setters para os atributos
     public String getNome() {
         return nome;
     }
@@ -57,14 +57,19 @@ public class Bootcamp {
 
     @Override
     public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        Bootcamp bootcamp = (Bootcamp) o;
-        return Objects.equals(nome, bootcamp.nome) && Objects.equals(descricao, bootcamp.descricao) && Objects.equals(dataInicial, bootcamp.dataInicial) && Objects.equals(dataFinal, bootcamp.dataFinal) && Objects.equals(devsInscritos, bootcamp.devsInscritos) && Objects.equals(conteudos, bootcamp.conteudos);
+        if (this == o) return true; // Verifica se o objeto é o mesmo
+        if (o == null || getClass() != o.getClass()) return false; // Verifica se o objeto é da mesma classe
+        Bootcamp bootcamp = (Bootcamp) o; // Faz o cast do objeto para Bootcamp
+        return Objects.equals(nome, bootcamp.nome) && // Verifica a igualdade dos nomes
+                Objects.equals(descricao, bootcamp.descricao) && // Verifica a igualdade das descrições
+                Objects.equals(dataInicial, bootcamp.dataInicial) && // Verifica a igualdade das datas iniciais
+                Objects.equals(dataFinal, bootcamp.dataFinal) && // Verifica a igualdade das datas finais
+                Objects.equals(devsInscritos, bootcamp.devsInscritos) && // Verifica a igualdade dos desenvolvedores inscritos
+                Objects.equals(conteudos, bootcamp.conteudos); // Verifica a igualdade dos conteúdos
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(nome, descricao, dataInicial, dataFinal, devsInscritos, conteudos);
+        return Objects.hash(nome, descricao, dataInicial, dataFinal, devsInscritos, conteudos); // Calcula o hash baseado nos atributos
     }
 }
