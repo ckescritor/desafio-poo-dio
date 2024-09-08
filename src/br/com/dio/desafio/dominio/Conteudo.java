@@ -2,13 +2,15 @@ package br.com.dio.desafio.dominio;
 
 public abstract class Conteudo {
 
-    protected static final double XP_PADRAO = 10d;
+    protected static final double XP_PADRAO = 10d; // Valor padrão de XP para todos os conteúdos
 
-    private String titulo;
-    private String descricao;
+    private String titulo; // Título do conteúdo
+    private String descricao; // Descrição do conteúdo
 
+    // Método abstrato para calcular XP, a ser implementado pelas subclasses
     public abstract double calcularXp();
 
+    // Métodos getters e setters para os atributos
     public String getTitulo() {
         return titulo;
     }
