@@ -22,15 +22,33 @@ O projeto é composto pelos seguintes arquivos:
 5. **`Dev.java`**: Representa um desenvolvedor, gerencia os conteúdos inscritos e concluídos, e calcula o XP total.
 6. **`Mentoria.java`**: Representa uma mentoria e herda de `Conteudo`. Calcula XP com um bônus adicional.
 
-## Dependências
+## Implementação dos Objetivos do Desafio
 
-Nenhuma dependência externa é necessária para este projeto.
+### 1. Abstração do Domínio Bootcamp
 
-## Configuração e Execução
+- **Abstração**: O domínio do Bootcamp foi abstraído criando uma classe `Bootcamp` que representa o conjunto de cursos e mentorias disponíveis. Esta classe inclui atributos como nome, descrição, datas de início e fim, e métodos para gerenciar os desenvolvedores inscritos e os conteúdos do bootcamp.
 
-Para executar o projeto, siga estes passos:
+### 2. Criação e Modelagem das Classes
 
-1. **Clone o repositório:**
-   ```bash
-   git clone <URL_DO_REPOSITORIO>
+- **Classes Criadas**:
+  - **`Bootcamp`**: Gerencia a inscrição de desenvolvedores e os conteúdos do bootcamp.
+  - **`Curso`**: Representa um curso, herda de `Conteudo`, e calcula XP baseado na carga horária.
+  - **`Mentoria`**: Representa uma mentoria, herda de `Conteudo`, e calcula XP com um bônus adicional.
+  - **`Dev`**: Representa um desenvolvedor, gerencia os conteúdos em que está inscrito e calcula o XP total com base nos conteúdos concluídos.
+
+- **Relacionamentos**:
+  - **Bootcamp** contém múltiplos **Conteúdos** (Cursos e Mentorias).
+  - **Dev** pode se inscrever em um **Bootcamp** e progredir em seus conteúdos.
+
+### 3. Modelagem dos Atributos e Métodos
+
+- **Abstração**: As classes `Curso` e `Mentoria` herdam da classe abstrata `Conteudo`, que define os atributos e métodos básicos necessários. A classe `Conteudo` tem o método abstrato `calcularXp()`, que é implementado de forma específica em `Curso` e `Mentoria`.
+
+- **Encapsulamento**: Todos os atributos são privados e são acessados e modificados através de métodos públicos (`getters` e `setters`). Isso garante que o acesso aos dados seja controlado.
+
+- **Herança**: A classe `Curso` e `Mentoria` herdam da classe `Conteudo`, permitindo reutilização de código e implementação específica dos métodos.
+
+- **Polimorfismo**: O método `calcularXp()` é um exemplo de polimorfismo. A forma como o XP é calculado varia entre `Curso` e `Mentoria`, mas o método é chamado de forma uniforme através da classe base `Conteudo`.
+
+
 
