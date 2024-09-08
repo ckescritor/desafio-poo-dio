@@ -1,18 +1,18 @@
 package br.com.dio.desafio.dominio;
 
-public class Curso extends Conteudo{
+public class Curso extends Conteudo {
 
-    private int cargaHoraria;
+    private int cargaHoraria; // Carga horária do curso
 
     @Override
     public double calcularXp() {
-        return XP_PADRAO * cargaHoraria;
+        return XP_PADRAO * cargaHoraria; // Calcula XP baseado na carga horária
     }
 
     public Curso() {
     }
 
-
+    // Métodos getters e setters para a carga horária
     public int getCargaHoraria() {
         return cargaHoraria;
     }
@@ -27,6 +27,7 @@ public class Curso extends Conteudo{
                 "titulo='" + getTitulo() + '\'' +
                 ", descricao='" + getDescricao() + '\'' +
                 ", cargaHoraria=" + cargaHoraria +
-                '}';
+                '}'; // Retorna uma representação do curso como string
     }
 }
+
